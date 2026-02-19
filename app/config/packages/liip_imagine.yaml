@@ -1,0 +1,21 @@
+# Documentation on how to configure the bundle can be found at: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+    loaders:
+        default:
+            filesystem:
+                data_root:
+                    - "%kernel.project_dir%/assets/img"
+    filter_sets:
+        guitar_main:
+            quality: 85
+            format: webp
+            filters:
+                thumbnail: { size: [ 1200, 800 ], mode: inset }
+
+        guitar_thumb:
+            quality: 80
+            format: webp
+            filters:
+                thumbnail: { size: [ 150, 150 ], mode: outbound }
